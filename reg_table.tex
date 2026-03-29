@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Per-Unit Price Regressions: Dominick's Laundry Detergent}
+\label{tab:regression}
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+\midrule
+$\ln(\text{Size})$ & $-3.003^{***}$ & $-3.007^{***}$ & $-2.820^{***}$ & $-2.800^{***}$ \\
+ & $(0.369)$ & $(0.369)$ & $(0.366)$ & $(0.367)$ \\
+[4pt]
+Sale indicator &  &  &  & $-0.606^{***}$ \\
+ &  &  &  & $(0.079)$ \\
+[4pt]
+Constant & $20.069^{***}$ & $20.405^{***}$ & $17.582^{***}$ & $17.613^{***}$ \\
+ & $(1.656)$ & $(1.663)$ & $(1.623)$ & $(1.624)$ \\
+\midrule
+Store FE & No & Yes & Yes & Yes \\
+Brand FE & No & No & Yes & Yes \\
+\midrule
+$R^2$ & 0.382 & 0.385 & 0.470 & 0.474 \\
+Adj.\ $R^2$ & 0.382 & 0.385 & 0.470 & 0.474 \\
+$N$ & 3,240,409 & 3,240,409 & 3,240,409 & 3,240,409 \\
+\bottomrule
+\end{tabular}
+
+\medskip\par\noindent\footnotesize
+\textit{Notes:} Dependent variable is per-unit price in cents per ounce. Standard errors clustered by UPC in parentheses. $^{***}\,p<0.01$, $^{**}\,p<0.05$, $^{*}\,p<0.10$. Store FE: 93 store dummies. Brand FE: 23 brand dummies.
+\end{table}

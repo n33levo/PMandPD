@@ -1,0 +1,28 @@
+# data files (too large for git; see README for download instructions)
+*.csv
+wlnd.zip
+upclnd.csv
+
+# intermediate / scratch
+scratch/
+__pycache__/
+*.pyc
+.venv/
+
+# latex build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS junk
+.DS_Store
+
+# old markdown drafts
+Product Modification*.md
+strengthened_empirical_section.md
