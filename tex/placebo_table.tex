@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Placebo Check: Per-Unit Price vs.\ Total Shelf Price}
+\label{tab:placebo}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) PPU (\textcent/oz) & (2) Shelf price (\$) \\
+\midrule
+$\ln(\text{Size})$ & $-2.800^{***}$ & $3.893^{***}$ \\
+ & $(0.367)$ & $(0.303)$ \\
+[4pt]
+Sale indicator & $-0.606^{***}$ & $-0.662^{***}$ \\
+ & $(0.079)$ & $(0.088)$ \\
+\midrule
+Store FE & Yes & Yes \\
+Brand FE & Yes & Yes \\
+\midrule
+$R^2$ & 0.474 & 0.652 \\
+Adj.\ $R^2$ & 0.474 & 0.652 \\
+$N$ & 3,240,409 & 3,240,409 \\
+\bottomrule
+\end{tabular}
+
+\medskip\par\noindent\footnotesize
+\textit{Notes:} Column~(1) uses per-unit price (cents per ounce) as the dependent variable. Column~(2) uses total shelf price (dollars). The negative coefficient in column~(1) and the positive coefficient in column~(2) confirm that larger packages have lower per-unit prices but higher total prices, ruling out a mechanical coding artefact. Standard errors clustered by UPC in parentheses. $^{***}\,p<0.01$, $^{**}\,p<0.05$, $^{*}\,p<0.10$.
+\end{table}

@@ -127,7 +127,7 @@ Section~\ref{sec:empirical} describes the data and reports empirical findings.
 Section~\ref{sec:cases} revisits case studies.
 Section~\ref{sec:welfare} discusses welfare implications.
 Section~\ref{sec:conclusion} concludes.
-Appendix~\ref{app:welfare} provides a formal welfare comparison, and Appendix~\ref{app:robustness} considers asymmetric markups.
+Appendix~\ref{app:welfare} provides a formal welfare comparison, Appendix~\ref{app:robustness} considers asymmetric markups, and Appendix~\ref{app:simulations} collects simulation figures.
 
 
 % INSTITUTIONAL AND LEGAL BACKGROUND
@@ -463,7 +463,7 @@ This within-chain variation mirrors the cross-retailer heterogeneity in the theo
 
 Introducing brand fixed effects in specification~(3) raises $R^2$ from 0.385 to 0.470, a substantial increase.
 The coefficient on log size attenuates slightly to $-2.820$. This indicates that part of the size--price gradient in the baseline reflects brand composition: premium brands cluster at certain sizes.
-The remaining within-brand size gradient is large and highly significant. This confirms that size-based pricing operates above and beyond brand effects.
+The remaining within-brand size gradient is large and highly significant. This is consistent with size-based pricing operating above and beyond brand effects.
 
 The full model~(4) adds the sale indicator. It enters with a coefficient of $-0.606$ (SE~$= 0.079$, $p < 0.001$): promotional sales reduce per-unit prices by about 0.6~\textcent/oz on average.
 The coefficient on log size is robust at $-2.800$.
@@ -472,9 +472,23 @@ The coefficient on log size is robust at $-2.800$.
 
 \subsection{Robustness: alternative standard-error estimators}
 
-Table~\ref{tab:robustness} re-estimates the full model under two alternative clustering schemes. The point estimates on $\ln(\text{Size})$ and the sale indicator are identical across all three columns, since clustering affects only the covariance estimator. Under store-level clustering (93 clusters), the standard errors are smaller than under UPC-level clustering (566 clusters). The very small standard error under store-level clustering reflects the fact that $\ln(\text{Size})$ varies at the UPC level rather than the store level; store-level clusters contain little identifying variation for this regressor. UPC-level clustering is therefore the more appropriate default, as confirmed by the two-way estimate. Under two-way clustering by UPC and store using the Cameron, Gelbach, and Miller (2011) formula, the standard errors are close to those from UPC-only clustering, confirming that UPC-level dependence is the dominant source of within-sample correlation. All main coefficients remain significant at the 1-percent level across all three specifications.
+Table~\ref{tab:robustness} re-estimates the full model under two alternative clustering schemes. The point estimates on $\ln(\text{Size})$ and the sale indicator are identical across all three columns, since clustering affects only the covariance estimator. Under store-level clustering (93 clusters), the standard errors are smaller than under UPC-level clustering (566 clusters). The very small standard error under store-level clustering reflects the fact that $\ln(\text{Size})$ varies at the UPC level rather than the store level; store-level clusters contain little identifying variation for this regressor. UPC-level clustering is therefore the more appropriate default, as supported by the two-way estimate. Under two-way clustering by UPC and store using the Cameron, Gelbach, and Miller (2011) formula, the standard errors are close to those from UPC-only clustering, supporting the conclusion that UPC-level dependence is the dominant source of within-sample correlation. All main coefficients remain significant at the 1-percent level across all three specifications.
 
 \input{robustness_table.tex}
+
+\subsection{Within-brand regressions}
+
+A natural objection to the size--price gradient is that it may reflect brand composition or package economics rather than deliberate price discrimination. To address this, Table~\ref{tab:within_brand} re-estimates the size--price regression separately for Tide, All, and Purex---three brands with substantial size variation in the Dominick's data.
+
+Within each brand, larger packages carry significantly lower per-unit prices. The gradient is steepest for Purex ($\hat{\beta} = -3.13$, $p < 0.001$) and shallower for Tide ($\hat{\beta} = -0.74$, $p < 0.001$). These within-brand estimates rule out the possibility that the pooled gradient in Table~\ref{tab:regression} is merely picking up across-brand quality or formulation differences. The size--price schedule operates \textit{within} a single brand's product line, consistent with the model's prediction that manufacturers use size differentiation to segment consumers.
+
+\input{within_brand_table.tex}
+
+\subsection{Placebo check: per-unit price vs.\ total shelf price}
+
+As a further diagnostic, Table~\ref{tab:placebo} regresses both per-unit price and total shelf price on log package size, with the same controls as the full specification. The coefficient on log size is strongly negative for per-unit price ($-2.80$, $p < 0.001$) but strongly positive for total shelf price ($+3.89$, $p < 0.001$). Larger packages cost more in absolute terms but less per ounce. This confirms a standard quantity-discount schedule, not a mechanical artefact of the per-unit calculation, and is consistent with nonlinear pricing theory.
+
+\input{placebo_table.tex}
 
 \subsection{Interpretation and limitations}
 
@@ -494,8 +508,10 @@ The model predicts that size-based retail price variation arises from size-based
 Third, the analysis is descriptive.
 The coefficient on log size reflects a correlation between size and per-unit price, not a causal effect.
 Unobserved product attributes correlated with size could contribute to the gradient.
-In particular, package size is a manufacturer's strategic choice, not a random product feature. Larger detergent bottles may contain more concentrated formula, independently justifying lower per-unit prices. The brand fixed effects in specification~(3) address quality differences at the brand level. Within a brand, the same core formulation typically appears across multiple package sizes, so the residual within-brand size variation is more credibly driven by deliberate nonlinear pricing. Formally establishing a causal effect would require an instrument for package-size choices; candidate instruments include store-level shelf-space constraints or wholesale-distribution logistics that determine which sizes each location stocks.
-Fourth, Table~\ref{tab:robustness} confirms that the main results are robust to alternative clustering by store and to two-way clustering by UPC and store via the Cameron, Gelbach, and Miller (2011) formula. Point estimates are unchanged; standard errors under the two-way scheme are close to the UPC-clustered baseline.
+In particular, package size is a manufacturer's strategic choice, not a random product feature. Larger detergent bottles may contain more concentrated formula, independently justifying lower per-unit prices. The ounce-based normalisation used here may not fully equalize washing capacity across products: a 100~oz bottle of concentrated formula may deliver more loads per ounce than a 100~oz bottle of standard formula. A more rigorous comparison would use load-equivalent pricing, but load counts are not available in the Dominick's data. The brand fixed effects in specification~(3) address quality differences at the brand level. Within a brand, the same core formulation typically appears across multiple package sizes, so the residual within-brand size variation is more credibly driven by deliberate nonlinear pricing. Formally establishing a causal effect would require an instrument for package-size choices; candidate instruments include store-level shelf-space constraints or wholesale-distribution logistics that determine which sizes each location stocks.
+Fourth, the Dominick's data do not observe wholesale contracts, retailer-specific manufacturer variants, or cross-chain product allocation. Accordingly, the empirical analysis does not directly test whether manufacturers used minor product modifications to evade Robinson--Patman constraints; it documents retail pricing patterns that are \textit{consistent with} such a mechanism. Directly testing the wholesale discrimination channel would require matched wholesale--retail price data spanning multiple retail chains and product variants.
+
+Fifth, Table~\ref{tab:robustness} supports the conclusion that the main results are robust to alternative clustering by store and to two-way clustering by UPC and store via the Cameron, Gelbach, and Miller (2011) formula. Point estimates are unchanged; standard errors under the two-way scheme are close to the UPC-clustered baseline.
 
 Despite these limitations, the descriptive patterns are consistent with the model and with the institutional accounts of how manufacturers use package-size differentiation to segment channels under Robinson--Patman.
 
@@ -506,7 +522,7 @@ Despite these limitations, the descriptive patterns are consistent with the mode
 \subsection{Detergent package variants}
 
 Manufacturers of laundry detergents, including Procter~\&~Gamble (Tide), Lever Brothers (Wisk, All, Surf), and others, offer a wide range of package sizes.
-The Dominick's data confirm this: Tide alone appears in sizes from 50~oz to over 200~oz, with per-unit prices ranging from roughly 5 to 12~\textcent/oz.
+The Dominick's data are consistent with this pattern: Tide alone appears in sizes from 50~oz to over 200~oz, with per-unit prices ranging from roughly 5 to 12~\textcent/oz.
 In the model, large club-store packages correspond to variant $A$ (high base demand, more elastic consumers). Smaller supermarket bottles correspond to variant $B$ (higher per-unit price, less elastic consumers).
 The empirical size coefficient of $-3.0$ quantifies the per-unit price gradient that this differentiation exploits.
 
@@ -551,23 +567,8 @@ If enforcement focuses narrowly on formal equality of wholesale prices for ident
 Stricter enforcement might then prompt \textit{more} product modification rather than less discrimination.
 Enforcement that accounts for both functional substitutability and consumer welfare could discourage purely cosmetic variants while permitting efficiency-enhancing discrimination.
 
-Figure~\ref{fig:retailer_box} presents an illustrative simulation of cross-channel price differences, calibrated to the Dominick's data and documented retail margins across grocery, mass-merchant, and club-store formats. This figure is a simulation, not a direct measurement, since the Dominick's data cover one supermarket chain. It illustrates the order of magnitude of cross-channel dispersion that motivates the model. Per-unit prices are highest in the grocery channel and lowest in club stores, with a gap of approximately 5~\textcent/oz. In the model, this gap equals $w_1^* - w_2^*$ plus downstream markup differences, and it is precisely the gain from closing this gap that drives the manufacturer's incentive to create channel-specific variants.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.72\textwidth]{fig2_retailer_boxplot.png}
-\caption{\textit{Illustrative simulation.} Per-unit price distribution by retailer channel, calibrated to Dominick's data and documented retail margins for grocery, mass-merchant, and club-store formats. This figure is not a direct empirical measurement but illustrates the cross-channel price dispersion that motivates the model's heterogeneous-retailer setup. \textit{Source:} Author's calibration.}
-\label{fig:retailer_box}
-\end{figure}
-
-Figure~\ref{fig:welfare} illustrates the welfare decomposition under uniform pricing and under two-price discrimination for two demand segments. Under discrimination, the deadweight-loss triangle shrinks in the elastic segment (served at a lower price) but may expand in the inelastic segment. The net welfare effect depends on total output, as formalized in the appendix.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.95\textwidth]{fig5_welfare.png}
-\caption{Welfare decomposition under (a) uniform pricing and (b) discriminatory pricing. Grey triangles represent deadweight loss. Consumer surplus and producer surplus areas shift across the two regimes. \textit{Source:} Author's calculations based on model parameters.}
-\label{fig:welfare}
-\end{figure}
+The cross-channel price dispersion that motivates the model is illustrated by a calibrated simulation in Appendix~\ref{app:simulations} (Figure~\ref{fig:retailer_box}), which shows per-unit prices highest in the grocery channel and lowest in club stores, with a gap of approximately 5~\textcent/oz.
+Similarly, Figure~\ref{fig:welfare} (also in Appendix~\ref{app:simulations}) decomposes welfare under uniform pricing and under two-price discrimination. The net welfare effect depends on total output, as formalized in Appendix~\ref{app:welfare}.
 
 
 % CONCLUSION
@@ -614,7 +615,7 @@ Substituting the closed-form quantities,
 \begin{equation}\label{eq:output_condition}
 \sum_{i} Q_i^D - \sum_{i} Q_i^U = \sum_{i} b_i\,(p_i^U - p_i^D) = \sum_i b_i\,(w^* - w_i^*).
 \end{equation}
-When $k = 0$ and the demand intercepts are symmetric ($a_1 = a_2$, $m_1 = m_2$), discriminatory and uniform prices coincide only if $b_1 = b_2$. With $b_1 \ne b_2$, the output effect in~\eqref{eq:output_condition} can be positive, negative, or zero depending on the specific parameter values. This confirms that discrimination via product modification does not unambiguously raise or lower welfare, consistent with Schmalensee (1981) and Varian (1989).
+When $k = 0$ and the demand intercepts are symmetric ($a_1 = a_2$, $m_1 = m_2$), discriminatory and uniform prices coincide only if $b_1 = b_2$. With $b_1 \ne b_2$, the output effect in~\eqref{eq:output_condition} can be positive, negative, or zero depending on the specific parameter values. This is consistent with the classical result that discrimination via product modification does not unambiguously raise or lower welfare (Schmalensee, 1981; Varian, 1989).
 
 For simplicity, the welfare expressions in~\eqref{eq:wu} and~\eqref{eq:wd} are stated with $k$ present only in the producer-surplus term. When $k > 0$, there is an additional real social cost $k\sum_i Q_i^D$ of producing the differentiated variants. This must be subtracted from $W^D$, making the net welfare gain from discrimination smaller. The output condition in~\eqref{eq:welfare_condition} then becomes necessary but not sufficient for a welfare improvement; one additionally requires the output expansion to dominate the differentiation cost.
 
@@ -642,10 +643,33 @@ In other words, asymmetric markups provide an \textit{additional} source of hete
 The threshold $\bar{k}$ and the comparative statics from Proposition~\ref{prop:threshold} carry through with the appropriate relabeling of parameters.
 
 
+\section{Simulation Figures}\label{app:simulations}
+
+Figure~\ref{fig:retailer_box} presents an illustrative simulation of cross-channel price differences, calibrated to the Dominick's data and documented retail margins across grocery, mass-merchant, and club-store formats. This figure is a simulation, not a direct measurement, since the Dominick's data cover one supermarket chain. It illustrates the order of magnitude of cross-channel dispersion that motivates the model.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{fig2_retailer_boxplot.png}
+\caption{\textit{Illustrative simulation.} Per-unit price distribution by retailer channel, calibrated to Dominick's data and documented retail margins for grocery, mass-merchant, and club-store formats. This figure is not a direct empirical measurement but illustrates the cross-channel price dispersion that motivates the model's heterogeneous-retailer setup. \textit{Source:} Author's calibration.}
+\label{fig:retailer_box}
+\end{figure}
+
+Figure~\ref{fig:welfare} illustrates the welfare decomposition under uniform pricing and under two-price discrimination for two demand segments. Under discrimination, the deadweight-loss triangle shrinks in the elastic segment (served at a lower price) but may expand in the inelastic segment.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig5_welfare.png}
+\caption{Welfare decomposition under (a) uniform pricing and (b) discriminatory pricing. Grey triangles represent deadweight loss. Consumer surplus and producer surplus areas shift across the two regimes. \textit{Source:} Author's calculations based on model parameters.}
+\label{fig:welfare}
+\end{figure}
+
 % ACKNOWLEDGEMENTS
 \section*{Acknowledgements}
 
 The authors thank the James~M.\ Kilts Center for Marketing at the University of Chicago Booth School of Business for providing the Dominick's Finer Foods scanner dataset. The authors declare no conflicts of interest and received no external funding for this research.
+
+\subsection*{AI Disclosure}
+Portions of this paper were drafted, revised, and typeset with assistance from large-language-model tools (GitHub Copilot / Claude, OpenAI ChatGPT). These tools were used for code generation (Python data-cleaning and regression scripts), \LaTeX\ formatting, literature-search suggestions, and prose editing. All substantive analytical decisions---model specification, variable construction, interpretation of results, and legal analysis---were made by the authors. The authors take full responsibility for the accuracy and integrity of the final manuscript.
 
 % REFERENCES
 \newpage
@@ -722,7 +746,7 @@ Accessed March 2026.
 \bibitem{Winston2023}
 Winston \& Strawn LLP.
 ``Price Discrimination Claims Under the Resurging Robinson-Patman Act.''
-	extit{Competition Corner}, 2023.
+\textit{Competition Corner}, 2023.
 \url{https://www.winston.com/en/blogs-and-podcasts/competition-corner/price-discrimination-claims-under-the-resurging-robinson-patman-act}.
 Accessed March 2026.
 
@@ -757,7 +781,7 @@ Local PDF consulted March 2026.
 \bibitem{Yonezawa2020}
 Yonezawa, Koichi, Miguel~I.\ G\'{o}mez, and Timothy~J.\ Richards.
 ``The Robinson--Patman Act and Vertical Relationships.''
-	extit{American Journal of Agricultural Economics} 102, no.~1 (2020): 329--352.
+\textit{American Journal of Agricultural Economics} 102, no.~1 (2020): 329--352.
 \url{https://doi.org/10.1093/ajae/aaz049}.
 Accessed March 2026.
 

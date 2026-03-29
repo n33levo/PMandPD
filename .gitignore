@@ -22,7 +22,3 @@ __pycache__/
 
 # OS junk
 .DS_Store
-
-# old markdown drafts
-Product Modification*.md
-strengthened_empirical_section.md

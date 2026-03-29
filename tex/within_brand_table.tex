@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Within-Brand Size--Price Gradient}
+\label{tab:within_brand}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & Tide & All & Purex \\
+\midrule
+$\ln(\text{Size})$ & $-0.740^{***}$ & $-1.223^{***}$ & $-3.129^{***}$ \\
+ & $(0.178)$ & $(0.401)$ & $(0.817)$ \\
+[4pt]
+Sale indicator & $-0.808^{***}$ & $-0.186$ & $-0.425^{*}$ \\
+ & $(0.077)$ & $(0.130)$ & $(0.255)$ \\
+\midrule
+Store FE & Yes & Yes & Yes \\
+\midrule
+$R^2$ & 0.231 & 0.209 & 0.492 \\
+Adj.\ $R^2$ & 0.230 & 0.209 & 0.492 \\
+$N$ & 564,067 & 237,357 & 104,329 \\
+UPCs & 78 & 51 & 22 \\
+\bottomrule
+\end{tabular}
+
+\medskip\par\noindent\footnotesize
+\textit{Notes:} Dependent variable is per-unit price in cents per ounce. Each column restricts the sample to a single brand. Standard errors clustered by UPC in parentheses. $^{***}\,p<0.01$, $^{**}\,p<0.05$, $^{*}\,p<0.10$. All specifications include store fixed effects and a sale indicator.
+\end{table}
