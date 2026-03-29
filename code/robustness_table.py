@@ -9,7 +9,9 @@ import warnings
 warnings.filterwarnings("ignore")
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEX = os.path.join(ROOT, "tex")
+os.makedirs(TEX, exist_ok=True)
 
 print("Loading data...")
 df = pd.read_csv(os.path.join(ROOT, "scratch", "detergent_clean.csv"))
@@ -114,7 +116,7 @@ $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.}
 \end{table}
 """
 
-out_path = os.path.join(ROOT, "robustness_table.tex")
+out_path = os.path.join(TEX, "robustness_table.tex")
 with open(out_path, "w") as f:
     f.write(latex)
 print(f"\nWrote {out_path}")

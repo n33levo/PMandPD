@@ -4,7 +4,7 @@ Sophia Ng and Sohail (Neel) Sarkar, University of Toronto, March 2026.
 
 ## What this is
 
-An undergraduate economics paper that models how manufacturers use minor product modifications (package size, formulation, branding) to practice third-degree price discrimination under Robinson-Patman Act constraints. We test two predictions on laundry detergent scanner data from Dominick's Finer Foods.
+An undergraduate economics paper that models how manufacturers use minor product modifications (package size, formulation, branding) to practice third-degree price discrimination under Robinson-Patman Act constraints. The empirical section provides descriptive evidence consistent with the mechanism using laundry detergent scanner data from Dominick's Finer Foods.
 
 ## Data
 
@@ -19,12 +19,12 @@ The raw data is **not** included in this repo (too large). To reproduce:
 ## Reproducing the analysis
 
 ```bash
-python clean_and_merge.py      # cleans and merges raw data -> scratch/detergent_clean.csv
-python eda_and_figures.py       # summary stats table + early EDA figures
-python generate_figures.py      # all 8 publication figures -> figures/
-python regressions.py           # four OLS models + reg_table.tex
-python robustness_table.py      # CGM two-way clustering robustness -> robustness_table.tex
-pdflatex paper.tex && pdflatex paper.tex   # compile the paper (two passes for cross-refs)
+python code/clean_and_merge.py      # cleans and merges raw data -> scratch/detergent_clean.csv
+python code/eda_and_figures.py      # summary stats table + early EDA figures
+python code/generate_figures.py     # all 8 publication figures -> figures/
+python code/regressions.py          # four OLS models + tex/reg_table.tex
+python code/robustness_table.py     # CGM two-way clustering robustness -> tex/robustness_table.tex
+(cd tex && pdflatex -interaction=nonstopmode paper.tex && pdflatex -interaction=nonstopmode paper.tex && cp paper.pdf ../paper.pdf)
 ```
 
 Requires Python 3.10+ with pandas, numpy, matplotlib, seaborn, statsmodels. A TeX Live or similar LaTeX distribution is needed for compilation.
@@ -32,16 +32,16 @@ Requires Python 3.10+ with pandas, numpy, matplotlib, seaborn, statsmodels. A Te
 ## Repo structure
 
 ```
-paper.tex              main manuscript (37 pages)
+tex/paper.tex          main manuscript
 paper.pdf              compiled PDF
 figures/               all 8 publication figures (PNG)
-reg_table.tex          regression table (auto-generated)
-robustness_table.tex   robustness table (auto-generated)
-summary_stats.tex      summary statistics table (auto-generated)
-clean_and_merge.py     data pipeline
-eda_and_figures.py     early EDA (exploratory)
-generate_figures.py    final publication figures
-regressions.py         OLS regressions
-robustness_table.py    two-way clustering robustness checks
+tex/reg_table.tex      regression table (auto-generated)
+tex/robustness_table.tex robustness table (auto-generated)
+tex/summary_stats.tex  summary statistics table (auto-generated)
+code/clean_and_merge.py data pipeline
+code/eda_and_figures.py early EDA (exploratory)
+code/generate_figures.py final publication figures
+code/regressions.py    OLS regressions
+code/robustness_table.py two-way clustering robustness checks
 regression_results.txt plain-text regression output
 ```

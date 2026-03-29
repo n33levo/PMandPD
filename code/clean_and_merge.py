@@ -7,7 +7,7 @@ import numpy as np
 import re
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH = os.path.join(ROOT, "scratch")
 os.makedirs(SCRATCH, exist_ok=True)
 

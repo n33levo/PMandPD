@@ -7,7 +7,7 @@
 \usepackage{booktabs}
 \usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage{graphicx}
-\graphicspath{{figures/}}
+\graphicspath{{../figures/}}
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{caption}
@@ -26,6 +26,7 @@
 \fancyhf{}
 \fancyhead[L]{\small\textit{Product Modification and Price Discrimination}}
 \fancyhead[R]{\small\thepage}
+\setlength{\headheight}{14pt}
 \renewcommand{\headrulewidth}{0pt}
 
 % ── Theorem environments ──────────────────────────────────────────────────
@@ -59,8 +60,6 @@ Honours BSc, Mathematics \& Economics & Honours BSc, Mathematics and its Applica
 \texttt{sophia.ng@mail.utoronto.ca} & \texttt{sohail.sarkar@mail.utoronto.ca}
 \end{tabular}
 \vspace{1.4cm}
-{\itshape Both authors contributed equally to this work.}
-\vspace{1.4cm}
 {\large March 2026\par}
 \vfill
 \textit{Word count: approximately 9,500 (excluding tables, figures, and references)}
@@ -76,8 +75,8 @@ Honours BSc, Mathematics \& Economics & Honours BSc, Mathematics and its Applica
 This paper studies how minor product modifications in package size, formulation, or branding allow manufacturers to practice retailer-level third-degree price discrimination under the constraints of the Robinson--Patman Act (RPA).
 A manufacturer--retailer model shows that introducing low-cost product variants outside the ``like grade and quality'' category relaxes a common-wholesale-price constraint and restores segment-specific pricing.
 The model yields closed-form conditions under which product modification strictly increases manufacturer profit. It also characterizes a threshold differentiation cost $\bar{k}$ and expected legal penalty $L$ that together govern the choice between uniform pricing and variant-based discrimination.
-The paper tests two core predictions using the Dominick's Finer Foods scanner dataset, which contains 3.24~million store-week-UPC observations spanning 566~laundry-detergent products across 93~stores and 396~weeks.
-Regressions of per-unit price on log package size yield a coefficient of $-3.00$ (SE~$= 0.37$, $p < 0.001$), confirming that larger packages carry significantly lower per-unit prices. This is consistent with size-based surplus extraction.
+The paper provides descriptive evidence consistent with two predictions using the Dominick's Finer Foods scanner dataset, which contains 3.24~million store-week-UPC observations spanning 566~laundry-detergent products across 93~stores and 396~weeks.
+Regressions of per-unit price on log package size yield a coefficient of $-3.00$ (SE~$= 0.37$, $p < 0.001$), showing that larger packages carry significantly lower per-unit prices. This pattern is consistent with size-based surplus extraction.
 Store fixed effects are jointly significant ($F = 15.04$, $p < 0.001$), documenting systematic cross-location pricing variation even within a single retail chain.
 Brand fixed effects raise the $R^2$ from 0.38 to 0.47, indicating that brand-level product differentiation is a material channel for price discrimination.
 The findings highlight how legal constraints, product design, and nonlinear pricing interact. They contribute to the law-and-economics discussion of Robinson--Patman and to the broader literature on third-degree price discrimination.
@@ -115,11 +114,11 @@ This paper asks:
 The analysis proceeds in three steps.
 First, it develops a manufacturer--retailer model in which Robinson--Patman--type constraints impose a common wholesale price for identical products. The manufacturer can relax this constraint by introducing low-cost product variants.
 Second, it links the model to actual legal institutions. It reviews FTC guidance and key case law to map specific product modifications into the legal framework.
-Third, it tests two core predictions using the Dominick's Finer Foods scanner dataset: (i)~per-unit prices decrease with package size, consistent with size-based price discrimination, and (ii)~per-unit prices vary systematically across stores, consistent with location-level demand segmentation.
+Third, it provides descriptive evidence consistent with two predictions using the Dominick's Finer Foods scanner dataset: (i)~per-unit prices decrease with package size, consistent with size-based price discrimination, and (ii)~per-unit prices vary systematically across stores, consistent with heterogeneous local pricing conditions within the chain.
 
 The contribution is twofold.
 On the theory side, the paper formalizes a channel-specific price-discrimination mechanism that is widely discussed in legal practice but has received limited formal treatment.
-On the empirical side, it provides a rigorous analysis of over 3.24~million scanner observations documenting the patterns predicted by the model: a steep size--price gradient, significant cross-store dispersion, and brand-level heterogeneity in per-unit pricing.
+On the empirical side, it provides a rigorous analysis of over 3.24~million scanner observations documenting pricing patterns consistent with the model: a steep size--price gradient, significant cross-store dispersion, and brand-level heterogeneity in per-unit pricing.
 
 Section~\ref{sec:background} reviews the institutional and legal background.
 Section~\ref{sec:literature} situates the analysis in the relevant literature.
@@ -149,7 +148,7 @@ Courts have generally interpreted this phrase to refer to the physical character
 The case law shows, however, that features such as package size, special packaging, or promotional content can be relevant when they create materially different competitive conditions across retailers.\footnote{Crowell \& Moring LLP, ``Do Different Size Packages Violate the Robinson Patman Act?'' Client Alert, March 2015; McGuireWoods LLP, ``June Antitrust Bulletin,'' June 2015.}
 This ambiguity gives manufacturers an incentive to design product modifications that are plausibly outside the ``like grade and quality'' category while still serving the same consumer function.
 
-\subsection{Package size, packaging, and channel-specific SKUs}
+\subsection{Package size, packaging, and large-format SKUs}
 
 One common form of product modification involves offering different package sizes to different classes of trade.
 Club stores such as Costco and Sam's Club often receive large, multi-unit packages. Traditional supermarkets and convenience stores stock smaller sizes.
@@ -164,10 +163,10 @@ These strategies also raise consumer search costs and make direct comparison acr
 
 \subsection{Enforcement cycles and current policy debate}
 
-Robinson--Patman enforcement has oscillated between aggressive periods and decades of relative dormancy as antitrust policy shifted toward a consumer-welfare standard.\footnote{Joshua~D. Wright and Douglas~H. Ginsburg, ``Stop Making Sense: Reviving the Robinson-Patman Act,'' George Mason University Law \& Economics Research Paper (2007).}
+Robinson--Patman enforcement has oscillated between aggressive periods and decades of relative dormancy as antitrust policy shifted toward a consumer-welfare standard.\footnote{Bruce~H. Kobayashi and Timothy~J. Muris, ``Stop Making Sense: Reviving the Robinson-Patman Act and the Economics of Intermediate Price Discrimination,'' February 2026.}
 Critics argue that strict enforcement protects inefficient small retailers at the expense of lower consumer prices. Supporters counter that unchecked discrimination by powerful manufacturers and retailers can harm long-run competition.\footnote{Institute for New Economic Thinking, ``Chicago School Economists Got it Wrong: Strong Antitrust Policy Boosts the Economy,'' 2018; Information Technology and Innovation Foundation, ``No, Reviving the Robinson-Patman Act Will Not Lead to More Competition,'' November 2024.}
 
-Recent policy discussions suggest renewed interest in Robinson--Patman enforcement, particularly given rising concentration in retail and wholesale markets.\footnote{Winston \& Strawn LLP, ``Price Discrimination Claims Under the Resurging Robinson-Patman Act,'' \textit{Competition Corner}, 2024.}
+Recent policy discussions suggest renewed interest in Robinson--Patman enforcement, particularly given rising concentration in retail and wholesale markets.\footnote{Winston \& Strawn LLP, ``Price Discrimination Claims Under the Resurging Robinson-Patman Act,'' \textit{Competition Corner}, 2023.}
 This makes it important to understand how firms adapt their pricing and product strategies in response to the statute.
 
 
@@ -189,13 +188,13 @@ Adams and Yellen show that bundling can increase profits when consumers' valuati
 \subsection{Law-and-economics analyses of Robinson--Patman}
 
 Law-and-economics scholarship on Robinson--Patman has long debated whether the statute promotes or undermines competitive outcomes.
-Early critiques argued that Robinson--Patman conflicts with the consumer-welfare standard and that its focus on protecting individual competitors can punish pro-competitive differential pricing.\footnote{Wright and Ginsburg, ``Stop Making Sense.''}
+Early critiques argued that Robinson--Patman conflicts with the consumer-welfare standard and that its focus on protecting individual competitors can punish pro-competitive differential pricing.\footnote{Kobayashi and Muris, ``Stop Making Sense.''}
 More recent commentary emphasizes that targeted discounts to powerful retailers can foreclose rivals and dampen upstream competition.\footnote{``Winners and Losers under the Robinson-Patman Act,'' CBS Working Paper No.\ 30.}
 
 Within this literature, package-size differences and special packaging have played an important role.
 Analyses of \textit{Woodman's} and related disputes show that producers can segment channels by offering retailer-specific package sizes, often paired with different per-unit wholesale prices.
-Yonezawa, G\'{o}mez, and Richards (2019) find that wholesale prices diverge across retailers despite Robinson--Patman constraints, but do not model the product-modification mechanism through which firms implement this divergence. The present paper fills that gap.\footnote{Koichi Yonezawa, Miguel~I.\ G\'{o}mez, and Timothy~J.\ Richards, ``The Robinson--Patman Act and Vertical Relationships,'' \textit{American Journal of Agricultural Economics} (2019), \url{https://doi.org/10.1093/ajae/aaz049}. Accessed March 2026.}
-This paper contributes by providing a tractable model in which product modification is an explicit decision variable that interacts with Robinson--Patman constraints. It also tests the model's predictions against large-scale scanner data.
+Yonezawa, G\'{o}mez, and Richards (2020) find that wholesale prices diverge across retailers despite Robinson--Patman constraints, but do not model the product-modification mechanism through which firms implement this divergence. The present paper fills that gap.\footnote{Koichi Yonezawa, Miguel~I.\ G\'{o}mez, and Timothy~J.\ Richards, ``The Robinson--Patman Act and Vertical Relationships,'' \textit{American Journal of Agricultural Economics} 102, no.~1 (2020): 329--352, \url{https://doi.org/10.1093/ajae/aaz049}. Accessed March 2026.}
+This paper contributes by providing a tractable model in which product modification is an explicit decision variable that interacts with Robinson--Patman constraints. It also documents retail pricing patterns consistent with the model using large-scale scanner data.
 
 
 % MODEL
@@ -290,7 +289,7 @@ Since $\Pi^D(k)$ is strictly decreasing in $k$, there exists a threshold $\bar{k
 
 \begin{proposition}[Profit effect of product modification]\label{prop:profit}
 Suppose demand is linear and downstream markups are fixed.
-If $b_1 \ne b_2$ and $k = L = 0$, then $\Pi^D(0) > \Pi^U$.
+If $\frac{a_1 - b_1 m_1}{b_1} \ne \frac{a_2 - b_2 m_2}{b_2}$ and $k = L = 0$, then $\Pi^D(0) > \Pi^U$.
 \end{proposition}
 
 \begin{proof}
@@ -306,6 +305,9 @@ For all but a measure-zero set of demand parameters, $w_1^* \ne w_2^*$. Coincide
 
 By the envelope theorem, the constrained maximum of a smooth objective is weakly less than the unconstrained maximum. The inequality is strict because the constraint $w_1 = w_2$ is binding when $b_1 \ne b_2$. Therefore $\Pi^D(0) > \Pi^U$.
 \end{proof}
+
+\paragraph{Remark.}
+The condition in Proposition~\ref{prop:profit} holds generically. In particular, when $b_1 \ne b_2$, equality of the two ratios requires a knife-edge parameter restriction.
 
 \begin{proposition}[Threshold differentiation cost and legal risk]\label{prop:threshold}
 There exists $\bar{k} > 0$ such that, for sufficiently small expected legal penalty $L$, the manufacturer prefers variant-based discrimination if and only if $k < \bar{k}$.
@@ -350,7 +352,7 @@ Figure~\ref{fig:kL_frontier} plots the break-even boundary $\bar{k}(L)$ in $(k, 
 
 
 % EMPIRICAL ANALYSIS
-\section{Empirical Analysis}\label{sec:empirical}
+\section{Descriptive Evidence from Dominick's Data}\label{sec:empirical}
 
 \subsection{Data: Dominick's Finer Foods scanner dataset}
 
@@ -407,18 +409,18 @@ Brand-level clustering is also visible. Tide products, for instance, tend to occ
 \label{fig:scatter}
 \end{figure}
 
-Figure~\ref{fig:scatter_channel} presents the same scatter but distinguishes standard SKUs from channel-specific SKUs. Products in the largest 5\% of package sizes are marked as channel-specific (square markers); this top-5\% threshold is a proxy, since the Dominick's data cover a single supermarket chain and true channel-exclusive SKUs are not labelled directly. These bulk-size packages cluster in the bottom-right of the figure: low per-unit prices and large sizes. This pattern is consistent with the model's prediction that size-based product modification allows manufacturers to serve more elastic, bulk-buying segments at lower per-unit prices.
+Figure~\ref{fig:scatter_channel} presents the same scatter but distinguishes standard SKUs from large-format SKUs. Products in the largest 5\% of package sizes are marked separately (square markers); this top-5\% threshold is a proxy, since the Dominick's data cover a single supermarket chain and true channel-exclusive SKUs are not labelled directly. These bulk-size packages cluster in the bottom-right of the figure: low per-unit prices and large sizes. This pattern is consistent with the model's prediction that size-based product modification allows manufacturers to serve more elastic, bulk-buying segments at lower per-unit prices.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.82\textwidth]{fig3_scatter_channel.png}
-\caption{Package size and per-unit price, distinguishing standard SKUs (circles) from channel-specific large-format SKUs (squares, defined as the top 5\% of package sizes---a proxy for club-format availability). The dashed line shows the overall log-linear fit. \textit{Source:} Author's calculations from Dominick's scanner data.}
+\caption{Package size and per-unit price, distinguishing standard SKUs (circles) from large-format SKUs (squares, defined as the top 5\% of package sizes; proxy for bulk-oriented formats). The dashed line shows the overall log-linear fit. \textit{Source:} Author's calculations from Dominick's scanner data.}
 \label{fig:scatter_channel}
 \end{figure}
 
 Figure~\ref{fig:boxplot_store} displays boxplots of per-unit price for the twelve Dominick's stores with the most observations, ordered by median.
 There is visible variation across stores: median per-unit prices range from approximately 6.4 to 7.4~\textcent/oz.
-This cross-store dispersion within a \textit{single retail chain} is consistent with location-level demand segmentation and zone pricing.
+This cross-store dispersion within a \textit{single retail chain} is consistent with a mixture of zone-pricing policy, local competitive conditions, and demand differences. The Dominick's Data Manual states that the chain priced products using 16 zones that effectively collapsed into four price tiers, with regular prices intended to be uniform within zones.\footnote{Dominick's Data Manual, University of Chicago Booth School of Business, Dominick's Finer Foods dataset documentation, local PDF consulted March 2026.}
 
 \begin{figure}[H]
 \centering
@@ -453,7 +455,7 @@ All specifications report standard errors clustered by UPC to account for within
 Table~\ref{tab:regression} presents the results.
 In the baseline specification~(1), $\hat{\beta} = -3.003$ (SE~$= 0.369$, $p < 0.001$) and $R^2 = 0.382$.
 A one-log-point increase in package size (approximately a 2.7-fold increase) is associated with a 3.0~\textcent/oz decrease in per-unit price.
-This large, precisely estimated coefficient confirms that the size--price schedule is steeply declining. It is consistent with the quantity-discount logic of nonlinear pricing and with the model's prediction that size differentiation enables effective price discrimination.
+This large, precisely estimated coefficient shows that the size--price schedule is steeply declining. It is consistent with the quantity-discount logic of nonlinear pricing and with the model's prediction that size differentiation enables effective price discrimination.
 
 Adding store fixed effects in specification~(2) leaves $\hat{\beta}$ essentially unchanged ($-3.007$) but yields a statistically significant improvement. A joint $F$-test on the 92 store dummies gives $F = 15.04$ ($p < 0.001$).
 Per-unit prices differ systematically across stores even after controlling for product size.
@@ -470,18 +472,18 @@ The coefficient on log size is robust at $-2.800$.
 
 \subsection{Robustness: alternative standard-error estimators}
 
-Table~\ref{tab:robustness} re-estimates the full model under two alternative clustering schemes. The point estimates on $\ln(\text{Size})$ and the sale indicator are identical across all three columns, since clustering affects only the covariance estimator. Under store-level clustering (93 clusters), the standard errors are smaller than under UPC-level clustering (566 clusters). This is expected: with fewer clusters, the finite-sample small-cluster correction matters less and the asymptotic approximation is somewhat more aggressive. Under two-way clustering by UPC and store using the Cameron, Gelbach, and Miller (2011) formula, the standard errors are close to those from UPC-only clustering, confirming that UPC-level dependence is the dominant source of within-sample correlation. All main coefficients remain significant at the 1-percent level across all three specifications.
+Table~\ref{tab:robustness} re-estimates the full model under two alternative clustering schemes. The point estimates on $\ln(\text{Size})$ and the sale indicator are identical across all three columns, since clustering affects only the covariance estimator. Under store-level clustering (93 clusters), the standard errors are smaller than under UPC-level clustering (566 clusters). The very small standard error under store-level clustering reflects the fact that $\ln(\text{Size})$ varies at the UPC level rather than the store level; store-level clusters contain little identifying variation for this regressor. UPC-level clustering is therefore the more appropriate default, as confirmed by the two-way estimate. Under two-way clustering by UPC and store using the Cameron, Gelbach, and Miller (2011) formula, the standard errors are close to those from UPC-only clustering, confirming that UPC-level dependence is the dominant source of within-sample correlation. All main coefficients remain significant at the 1-percent level across all three specifications.
 
 \input{robustness_table.tex}
 
 \subsection{Interpretation and limitations}
 
-The empirical results are consistent with the two central predictions of the model.
+The empirical results document pricing patterns consistent with the model.
 First, the steep negative coefficient on log size corresponds to the model's mechanism of size-based product differentiation. By offering the same underlying product in different package sizes, the manufacturer can implement a nonlinear pricing schedule that approximates third-degree price discrimination.
 Larger packages extract less surplus per unit from bulk-buying, more price-elastic consumers. Smaller packages extract more from convenience-oriented, less elastic consumers.
 
 Second, the significant store fixed effects correspond to the model's retailer-heterogeneity parameter ($b_1 \ne b_2$).
-Even within a single chain, where wholesale contracts are presumably uniform, local demand conditions, competitive environments, or zone-pricing policies generate meaningful variation in per-unit prices across locations.
+Even within a single chain, where wholesale contracts are presumably uniform, zone-pricing policy, local demand conditions, and competitive environments generate meaningful variation in per-unit prices across locations.
 In the cross-chain setting of the model, this variation would be amplified by differences in retail format and by the legal freedom to charge different wholesale prices for differentiated variants.
 
 Several limitations should be noted.
@@ -495,7 +497,7 @@ Unobserved product attributes correlated with size could contribute to the gradi
 In particular, package size is a manufacturer's strategic choice, not a random product feature. Larger detergent bottles may contain more concentrated formula, independently justifying lower per-unit prices. The brand fixed effects in specification~(3) address quality differences at the brand level. Within a brand, the same core formulation typically appears across multiple package sizes, so the residual within-brand size variation is more credibly driven by deliberate nonlinear pricing. Formally establishing a causal effect would require an instrument for package-size choices; candidate instruments include store-level shelf-space constraints or wholesale-distribution logistics that determine which sizes each location stocks.
 Fourth, Table~\ref{tab:robustness} confirms that the main results are robust to alternative clustering by store and to two-way clustering by UPC and store via the Cameron, Gelbach, and Miller (2011) formula. Point estimates are unchanged; standard errors under the two-way scheme are close to the UPC-clustered baseline.
 
-Despite these limitations, the descriptive patterns are strikingly consistent with the model and with the institutional accounts of how manufacturers use package-size differentiation to segment channels under Robinson--Patman.
+Despite these limitations, the descriptive patterns are consistent with the model and with the institutional accounts of how manufacturers use package-size differentiation to segment channels under Robinson--Patman.
 
 
 % CASE STUDIES REVISITED
@@ -575,7 +577,7 @@ This paper develops and analyzes a mechanism by which manufacturers use minor pr
 A linear-demand model with a common-wholesale-price constraint shows that low-cost differentiation into channel-specific variants restores segment-specific wholesale prices and strictly increases manufacturer profit when downstream demand slopes differ.
 The model provides closed-form expressions for the threshold differentiation cost $\bar{k}$ and connects the pricing result to the standard Ramsey inverse-elasticity condition.
 
-Empirical analysis of the Dominick's Finer Foods scanner dataset, covering 3.24~million observations across 566~laundry-detergent UPCs, 93~stores, and 396~weeks, confirms two key predictions.
+Empirical analysis of the Dominick's Finer Foods scanner dataset, covering 3.24~million observations across 566~laundry-detergent UPCs, 93~stores, and 396~weeks, documents two pricing patterns consistent with the mechanism.
 Per-unit prices decline steeply with package size ($\hat{\beta} = -3.0$, $p < 0.001$).
 Per-unit prices vary significantly across stores ($F = 15.04$, $p < 0.001$).
 Brand fixed effects account for a material share of price variation ($\Delta R^2 \approx 0.09$). This indicates that brand-level product differentiation is an additional channel for surplus extraction.
@@ -691,11 +693,11 @@ Varian, Hal~R.
 In \textit{Handbook of Industrial Organization}, vol.~1, edited by R.~Schmalensee and R.~Willig, 597--654.
 Amsterdam: North-Holland, 1989.
 
-\bibitem{GMU2007}
-Wright, Joshua~D., and Douglas~H. Ginsburg.
-``Stop Making Sense: Reviving the Robinson-Patman Act.''
-George Mason University Law \& Economics Research Paper, 2007.
-\url{https://www.law.gmu.edu/pubs/papers/2603}.
+\bibitem{KobayashiMuris2026}
+Kobayashi, Bruce~H., and Timothy~J. Muris.
+``Stop Making Sense: Reviving the Robinson-Patman Act and the Economics of Intermediate Price Discrimination.''
+George Mason University / Competitive Enterprise Institute, February 2026.
+\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6299819}.
 Accessed March 2026.
 
 \bibitem{Schmalensee1981}
@@ -717,10 +719,10 @@ November 2024.
 \url{https://itif.org/publications/2024/11/25/reviving-robinson-patman-act-will-not-lead-to-more-competition-better-economy/}.
 Accessed March 2026.
 
-\bibitem{Winston2024}
+\bibitem{Winston2023}
 Winston \& Strawn LLP.
 ``Price Discrimination Claims Under the Resurging Robinson-Patman Act.''
-\textit{Competition Corner}, 2024.
+	extit{Competition Corner}, 2023.
 \url{https://www.winston.com/en/blogs-and-podcasts/competition-corner/price-discrimination-claims-under-the-resurging-robinson-patman-act}.
 Accessed March 2026.
 
@@ -747,10 +749,15 @@ James~M.\ Kilts Center for Marketing, University of Chicago Booth School of Busi
 \url{https://www.chicagobooth.edu/research/kilts/research-data/dominicks}.
 Accessed March 2026.
 
-\bibitem{Yonezawa2019}
+\bibitem{DominicksManual}
+Dominick's Data Manual.
+University of Chicago Booth School of Business, Dominick's Finer Foods dataset documentation.
+Local PDF consulted March 2026.
+
+\bibitem{Yonezawa2020}
 Yonezawa, Koichi, Miguel~I.\ G\'{o}mez, and Timothy~J.\ Richards.
 ``The Robinson--Patman Act and Vertical Relationships.''
-\textit{American Journal of Agricultural Economics} (2019).
+	extit{American Journal of Agricultural Economics} 102, no.~1 (2020): 329--352.
 \url{https://doi.org/10.1093/ajae/aaz049}.
 Accessed March 2026.
 

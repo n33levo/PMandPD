@@ -11,8 +11,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH = os.path.join(ROOT, "scratch")
+TEX = os.path.join(ROOT, "tex")
+EDA_FIGURES = os.path.join(SCRATCH, "eda_figures")
+os.makedirs(TEX, exist_ok=True)
+os.makedirs(EDA_FIGURES, exist_ok=True)
 
 plt.rcParams.update({
     "font.family": "serif",
@@ -37,7 +41,7 @@ display_names = {
     "ppu_cents": "Per-unit price (\\textcent/oz)",
 }
 
-with open(os.path.join(ROOT, "summary_stats.tex"), "w") as f:
+with open(os.path.join(TEX, "summary_stats.tex"), "w") as f:
     f.write("\\begin{table}[htbp]\n\\centering\n")
     f.write("\\caption{Summary Statistics: Dominick's Laundry Detergent Scanner Data}\n")
     f.write("\\label{tab:summary}\n")
@@ -59,7 +63,7 @@ with open(os.path.join(ROOT, "summary_stats.tex"), "w") as f:
             f"{df['STORE'].nunique()} stores, {df['UPC'].nunique()} UPCs, "
             f"and {df['WEEK'].nunique()} weeks.\n")
     f.write("\\end{table}\n")
-print("Wrote summary_stats.tex")
+print("Wrote tex/summary_stats.tex")
 
 desc.to_csv(os.path.join(SCRATCH, "summary_stats.csv"))
 
@@ -91,9 +95,9 @@ ax.set_ylabel("Per-unit price (cents/oz)")
 ax.set_title("Figure 1: Package Size and Per-Unit Price")
 ax.legend(fontsize=7, frameon=False, ncol=2, loc="upper right")
 ax.spines[["top", "right"]].set_visible(False)
-fig.savefig(os.path.join(ROOT, "fig1_size_vs_ppu.png"))
+fig.savefig(os.path.join(EDA_FIGURES, "fig1_size_vs_ppu.png"))
 plt.close()
-print("Wrote fig1_size_vs_ppu.png")
+print("Wrote scratch/eda_figures/fig1_size_vs_ppu.png")
 
 # fig 2: ppu by store boxplot
 store_counts = df.groupby("STORE").size()
@@ -112,9 +116,9 @@ ax.set_ylabel("Per-unit price (cents/oz)")
 ax.set_title("Figure 2: Per-Unit Price Distribution by Store")
 ax.spines[["top", "right"]].set_visible(False)
 ax.tick_params(axis="x", rotation=45)
-fig.savefig(os.path.join(ROOT, "fig2_ppu_by_store.png"))
+fig.savefig(os.path.join(EDA_FIGURES, "fig2_ppu_by_store.png"))
 plt.close()
-print("Wrote fig2_ppu_by_store.png")
+print("Wrote scratch/eda_figures/fig2_ppu_by_store.png")
 
 # fig 3: ppu distribution
 fig, ax = plt.subplots(figsize=(7, 5))
@@ -131,8 +135,8 @@ ax.set_ylabel("Density")
 ax.set_title("Figure 3: Distribution of Per-Unit Prices")
 ax.legend(fontsize=9, frameon=False)
 ax.spines[["top", "right"]].set_visible(False)
-fig.savefig(os.path.join(ROOT, "fig3_ppu_distribution.png"))
+fig.savefig(os.path.join(EDA_FIGURES, "fig3_ppu_distribution.png"))
 plt.close()
-print("Wrote fig3_ppu_distribution.png")
+print("Wrote scratch/eda_figures/fig3_ppu_distribution.png")
 
 print("\nAll figures and summary table generated.")

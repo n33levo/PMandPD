@@ -11,7 +11,7 @@ from matplotlib.patches import FancyArrowPatch, Polygon
 import matplotlib.patches as mpatches
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH = os.path.join(ROOT, "scratch")
 FIGURES = os.path.join(ROOT, "figures")
 os.makedirs(FIGURES, exist_ok=True)

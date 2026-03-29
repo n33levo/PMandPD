@@ -10,8 +10,10 @@ import os
 import warnings
 warnings.filterwarnings("ignore")
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH = os.path.join(ROOT, "scratch")
+TEX = os.path.join(ROOT, "tex")
+os.makedirs(TEX, exist_ok=True)
 
 df = pd.read_csv(os.path.join(SCRATCH, "detergent_clean.csv"))
 print(f"Loaded {len(df):,} rows")
@@ -86,7 +88,7 @@ key_vars = [
     ("sale_flag", "Sale indicator"),
 ]
 
-with open(os.path.join(ROOT, "reg_table.tex"), "w") as f:
+with open(os.path.join(TEX, "reg_table.tex"), "w") as f:
     f.write("\\begin{table}[htbp]\n\\centering\n")
     f.write("\\caption{Per-Unit Price Regressions: Dominick's Laundry Detergent}\n")
     f.write("\\label{tab:regression}\n\\small\n")
@@ -134,7 +136,7 @@ with open(os.path.join(ROOT, "reg_table.tex"), "w") as f:
             f"Brand FE: {n_brands} brand dummies.\n")
     f.write("\\end{table}\n")
 
-print("\nWrote reg_table.tex")
+print("\nWrote tex/reg_table.tex")
 
 # plain-text summary
 with open(os.path.join(ROOT, "regression_results.txt"), "w") as f:

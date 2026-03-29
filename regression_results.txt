@@ -1,5 +1,4 @@
 
-======================================================================
 Model (1)
 ======================================================================
                             OLS Regression Results                            
@@ -8,7 +7,7 @@ Dep. Variable:              ppu_cents   R-squared:                       0.382
 Model:                            OLS   Adj. R-squared:                  0.382
 Method:                 Least Squares   F-statistic:                     66.34
 Date:                Sun, 29 Mar 2026   Prob (F-statistic):           2.44e-15
-Time:                        16:46:58   Log-Likelihood:            -7.4823e+06
+Time:                        18:36:01   Log-Likelihood:            -7.4823e+06
 No. Observations:             3240409   AIC:                         1.496e+07
 Df Residuals:                 3240407   BIC:                         1.496e+07
 Df Model:                           1                                         
@@ -28,7 +27,6 @@ Kurtosis:                      42.788   Cond. No.                         30.9
 Notes:
 [1] Standard Errors are robust to cluster correlation (cluster)
 
-======================================================================
 Model (2)
 ======================================================================
                             OLS Regression Results                            
@@ -37,7 +35,7 @@ Dep. Variable:              ppu_cents   R-squared:                       0.385
 Model:                            OLS   Adj. R-squared:                  0.385
 Method:                 Least Squares   F-statistic:                     15.68
 Date:                Sun, 29 Mar 2026   Prob (F-statistic):          1.68e-107
-Time:                        16:46:59   Log-Likelihood:            -7.4743e+06
+Time:                        18:36:02   Log-Likelihood:            -7.4743e+06
 No. Observations:             3240409   AIC:                         1.495e+07
 Df Residuals:                 3240315   BIC:                         1.495e+07
 Df Model:                          93                                         
@@ -149,7 +147,6 @@ Kurtosis:                      43.432   Cond. No.                         401.
 Notes:
 [1] Standard Errors are robust to cluster correlation (cluster)
 
-======================================================================
 Model (3)
 ======================================================================
                             OLS Regression Results                            
@@ -158,7 +155,7 @@ Dep. Variable:              ppu_cents   R-squared:                       0.470
 Model:                            OLS   Adj. R-squared:                  0.470
 Method:                 Least Squares   F-statistic:                     103.6
 Date:                Sun, 29 Mar 2026   Prob (F-statistic):          1.62e-316
-Time:                        16:46:59   Log-Likelihood:            -7.2334e+06
+Time:                        18:36:03   Log-Likelihood:            -7.2334e+06
 No. Observations:             3240409   AIC:                         1.447e+07
 Df Residuals:                 3240293   BIC:                         1.447e+07
 Df Model:                         115                                         
@@ -292,7 +289,6 @@ Kurtosis:                      60.999   Cond. No.                         402.
 Notes:
 [1] Standard Errors are robust to cluster correlation (cluster)
 
-======================================================================
 Model (4)
 ======================================================================
                             OLS Regression Results                            
@@ -301,7 +297,7 @@ Dep. Variable:              ppu_cents   R-squared:                       0.474
 Model:                            OLS   Adj. R-squared:                  0.474
 Method:                 Least Squares   F-statistic:                     87.85
 Date:                Sun, 29 Mar 2026   Prob (F-statistic):          4.66e-298
-Time:                        16:47:00   Log-Likelihood:            -7.2190e+06
+Time:                        18:36:03   Log-Likelihood:            -7.2190e+06
 No. Observations:             3240409   AIC:                         1.444e+07
 Df Residuals:                 3240292   BIC:                         1.444e+07
 Df Model:                         116                                         
